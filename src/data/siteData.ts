@@ -2,7 +2,7 @@
 // Used by the footer, contact page, WhatsApp button, social links,
 // metadata (SEO/OG), JSON-LD, sitemap, and robots — update values here only.
 export const siteInfo = {
-  name: { bn: 'মাল্টি কমিউনিটি হল', en: 'Multi Community Hall' },
+  name: { bn: 'কিং কমিউনিটি হল', en: 'King Community Hall' },
   tagline: {
     bn: 'আপনার যেকোনো অনুষ্ঠানের জন্য আদর্শ স্থান',
     en: 'The ideal venue for all your events',
@@ -10,11 +10,11 @@ export const siteInfo = {
   description:
     'A welcoming venue for events, celebrations, training, and community programs.',
   // TODO: replace with the real production domain before launch
-  url: 'https://multicommunityhall.com',
+  url: 'https://kingcommunityhall.com',
   // TODO: replace placeholder phone/WhatsApp numbers with real ones
   phone: '+880 1XXX-XXXXXX',
   whatsappUrl: 'https://wa.me/8801XXXXXXXXX',
-  email: 'info@multicommunityhall.com',
+  email: 'info@kingcommunityhall.com',
   // TODO: replace placeholder address with the real one
   address: {
     bn: '১২৩, প্রধান সড়ক, উপজেলা সদর, জেলা শহর, বাংলাদেশ',
@@ -70,8 +70,8 @@ export const categories: CategoryData[] = [
     ],
     amenities: [
       { bn: 'শীততাপ নিয়ন্ত্রিত', en: 'Air Conditioned' },
-      { bn: 'মাল্টি কমিউনিটি হলের নিজস্ব বাবুর্চী', en: 'In-house Chef' },
-      { bn: 'মাল্টি কমিউনিটি হলের নিজস্ব খাবার পরিবেশক', en: 'In-house Catering Staff' },
+      { bn: 'কিং কমিউনিটি হলের নিজস্ব বাবুর্চী', en: 'In-house Chef' },
+      { bn: 'কিং কমিউনিটি হলের নিজস্ব খাবার পরিবেশক', en: 'In-house Catering Staff' },
       { bn: 'ওয়াইফাই সুবিধা', en: 'WiFi Facility' },
       { bn: '২৪ ঘন্টা পানি ও বিদ্যুৎ সুবিধা', en: '24/7 Water & Electricity' },
     ],
@@ -101,8 +101,8 @@ export const categories: CategoryData[] = [
     ],
     amenities: [
       { bn: 'শীততাপ নিয়ন্ত্রিত', en: 'Air Conditioned' },
-      { bn: 'মাল্টি কমিউনিটি হলের নিজস্ব বাবুর্চী', en: 'In-house Chef' },
-      { bn: 'মাল্টি কমিউনিটি হলের নিজস্ব খাবার পরিবেশক', en: 'In-house Catering Staff' },
+      { bn: 'কিং কমিউনিটি হলের নিজস্ব বাবুর্চী', en: 'In-house Chef' },
+      { bn: 'কিং কমিউনিটি হলের নিজস্ব খাবার পরিবেশক', en: 'In-house Catering Staff' },
       { bn: 'ওয়াইফাই সুবিধা', en: 'WiFi Facility' },
       { bn: '২৪ ঘন্টা পানি ও বিদ্যুৎ সুবিধা', en: '24/7 Water & Electricity' },
     ],
@@ -132,9 +132,9 @@ export const categories: CategoryData[] = [
     ],
     amenities: [
       { bn: 'শীততাপ নিয়ন্ত্রিত', en: 'Air Conditioned' },
-      { bn: 'মাল্টি কমিউনিটি হলের নিজস্ব বাবুর্চী', en: 'In-house Chef' },
-      { bn: 'মাল্টি কমিউনিটি হলের নিজস্ব খাবার পরিবেশক', en: 'In-house Catering Staff' },
-      { bn: 'মাল্টি কমিউনিটি হলের নিজস্ব ফার্নিচার', en: 'In-house Furniture' },
+      { bn: 'কিং কমিউনিটি হলের নিজস্ব বাবুর্চী', en: 'In-house Chef' },
+      { bn: 'কিং কমিউনিটি হলের নিজস্ব খাবার পরিবেশক', en: 'In-house Catering Staff' },
+      { bn: 'কিং কমিউনিটি হলের নিজস্ব ফার্নিচার', en: 'In-house Furniture' },
       { bn: 'ওয়াইফাই সুবিধা', en: 'WiFi Facility' },
       { bn: '২৪ ঘন্টা পানি ও বিদ্যুৎ সুবিধা', en: '24/7 Water & Electricity' },
     ],
@@ -164,9 +164,9 @@ export const categories: CategoryData[] = [
     ],
     amenities: [
       { bn: 'শীততাপ নিয়ন্ত্রিত', en: 'Air Conditioned' },
-      { bn: 'মাল্টি কমিউনিটি হলের নিজস্ব বাবুর্চী', en: 'In-house Chef' },
-      { bn: 'মাল্টি কমিউনিটি হলের নিজস্ব খাবার পরিবেশক', en: 'In-house Catering Staff' },
-      { bn: 'মাল্টি কমিউনিটি হলের নিজস্ব ফার্নিচার', en: 'In-house Furniture' },
+      { bn: 'কিং কমিউনিটি হলের নিজস্ব বাবুর্চী', en: 'In-house Chef' },
+      { bn: 'কিং কমিউনিটি হলের নিজস্ব খাবার পরিবেশক', en: 'In-house Catering Staff' },
+      { bn: 'কিং কমিউনিটি হলের নিজস্ব ফার্নিচার', en: 'In-house Furniture' },
       { bn: 'ওয়াইফাই সুবিধা', en: 'WiFi Facility' },
       { bn: '২৪ ঘন্টা পানি ও বিদ্যুৎ সুবিধা', en: '24/7 Water & Electricity' },
     ],

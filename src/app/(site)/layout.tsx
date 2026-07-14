@@ -13,7 +13,8 @@ const jsonLd = {
   url: siteInfo.url,
   telephone: siteInfo.phone,
   email: siteInfo.email,
-  image: categories.map((category) => category.heroImage),
+  logo: `${siteInfo.url}/logo-with-bg.jpg`,
+  image: [`${siteInfo.url}/logo-with-bg.jpg`, ...categories.map((category) => category.heroImage)],
   address: {
     '@type': 'PostalAddress',
     streetAddress: siteInfo.address.en,

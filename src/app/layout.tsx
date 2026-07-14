@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Hind_Siliguri, Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import { categories, siteInfo } from "@/data/siteData";
+import { siteInfo } from "@/data/siteData";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const hindSiliguri = Hind_Siliguri({
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: siteInfo.name.en,
     description: siteInfo.description,
     url: "/",
-    images: [{ url: categories[0].heroImage }],
+    images: [{ url: "/logo-with-bg.jpg" }],
   },
   twitter: {
     card: "summary_large_image",

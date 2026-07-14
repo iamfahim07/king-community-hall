@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X, ChevronDown, LayoutGrid } from 'lucide-react';
-import { categories } from '@/data/siteData';
+import { categories, siteInfo } from '@/data/siteData';
 import logo from '@/assets/logo.png';
 
 type NavItem = { to: string; bn: string; en: string };
@@ -97,7 +97,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all ${scrolled ? 'bg-background/95 backdrop-blur shadow-md' : 'bg-background shadow-sm'}`}>
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center">
-          <Image src={logo} alt="Multi Community Hall" className="h-12 w-auto" priority />
+          <Image src={logo} alt={siteInfo.name.en} className="h-12 w-auto" priority />
         </Link>
 
         {/* Desktop Nav */}
