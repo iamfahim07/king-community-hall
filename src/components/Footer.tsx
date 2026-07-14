@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { siteInfo } from '@/data/siteData';
 import logo from '@/assets/logo.png';
 
 const Footer = () => {
@@ -14,9 +15,9 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <Image src={logo} alt="Multi Community Hall" className="h-24 w-auto mb-3" />
+            <Image src={logo} alt={siteInfo.name.en} className="h-24 w-auto mb-3" />
             <p className="text-background/70 text-sm">
-              {t('আপনার যেকোনো অনুষ্ঠানের জন্য আদর্শ স্থান', 'The ideal venue for all your events')}
+              {t(siteInfo.tagline.bn, siteInfo.tagline.en)}
             </p>
           </div>
           <div>
@@ -40,22 +41,22 @@ const Footer = () => {
             <h4 className="font-semibold mb-3">{t('যোগাযোগ', 'Contact')}</h4>
             <div className="flex flex-col gap-3 text-sm text-background/70">
               <div className="flex items-start gap-2">
-                <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>+880 1XXX-XXXXXX</span>
+                <Phone className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span>{siteInfo.phone}</span>
               </div>
               <div className="flex items-start gap-2">
-                <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>info@multicommunityhall.com</span>
+                <Mail className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span>{siteInfo.email}</span>
               </div>
               <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>{t('১২৩, প্রধান সড়ক, উপজেলা সদর, জেলা শহর, বাংলাদেশ', '123, Main Road, Upazila Sadar, District Town, Bangladesh')}</span>
+                <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span>{t(siteInfo.address.bn, siteInfo.address.en)}</span>
               </div>
             </div>
           </div>
         </div>
         <div className="border-t border-background/20 mt-8 pt-6 text-center text-sm text-background/50">
-          © {new Date().getFullYear()} Multi Community Hall. {t('সর্বস্বত্ব সংরক্ষিত।', 'All rights reserved.')}
+          © {new Date().getFullYear()} {t(siteInfo.name.bn, siteInfo.name.en)}. {t('সর্বস্বত্ব সংরক্ষিত।', 'All rights reserved.')}
         </div>
       </div>
     </footer>

@@ -3,30 +3,58 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { categories } from '@/data/siteData';
 
 const HeroCarousel = () => {
   const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [paused, setPaused] = useState(false);
+  const touchStartX = useRef<number | null>(null);
   const router = useRouter();
 
+  // Re-created whenever `current` changes, so manual navigation
+  // (dots, arrows, swipe) restarts the full 5s delay.
   useEffect(() => {
-    timerRef.current = setInterval(() => {
+    if (paused) return;
+    const timer = setInterval(() => {
       setCurrent(prev => (prev + 1) % categories.length);
     }, 5000);
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, []);
+    return () => clearInterval(timer);
+  }, [current, paused]);
+
+  const goPrev = () => setCurrent(prev => (prev - 1 + categories.length) % categories.length);
+  const goNext = () => setCurrent(prev => (prev + 1) % categories.length);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(delta) < 50) return;
+    if (delta > 0) goPrev();
+    else goNext();
+  };
 
   const handleCTA = () => {
     router.push('/contact');
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section
+      className="relative w-full h-screen overflow-hidden"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={t('হিরো স্লাইডশো', 'Hero slideshow')}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       {categories.map((cat, i) => (
         <div
           key={cat.id}
@@ -50,13 +78,32 @@ const HeroCarousel = () => {
           {t('ইভেন্ট বুক করুন', 'Book an Event')}
         </button>
       </div>
+      {/* Arrows */}
+      <button
+        type="button"
+        onClick={goPrev}
+        aria-label={t('পূর্ববর্তী স্লাইড', 'Previous slide')}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 hidden sm:flex items-center justify-center w-11 h-11 rounded-full bg-background/20 text-background hover:bg-background/40 transition-colors"
+      >
+        <ChevronLeft className="w-7 h-7" />
+      </button>
+      <button
+        type="button"
+        onClick={goNext}
+        aria-label={t('পরবর্তী স্লাইড', 'Next slide')}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 hidden sm:flex items-center justify-center w-11 h-11 rounded-full bg-background/20 text-background hover:bg-background/40 transition-colors"
+      >
+        <ChevronRight className="w-7 h-7" />
+      </button>
       {/* Dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {categories.map((_, i) => (
+        {categories.map((cat, i) => (
           <button
-            key={i}
+            key={cat.id}
             onClick={() => setCurrent(i)}
-            className={`w-3 h-3 rounded-full transition-colors ${i === current ? 'bg-primary' : 'bg-background/50'}`}
+            aria-label={t(cat.bn.name, cat.en.name)}
+            aria-current={i === current}
+            className={`w-3 h-3 rounded-full transition-colors ${i === current ? 'bg-primary' : 'bg-background/50 hover:bg-background/80'}`}
           />
         ))}
       </div>

@@ -1,3 +1,38 @@
+// Single source of truth for business/contact details.
+// Used by the footer, contact page, WhatsApp button, social links,
+// metadata (SEO/OG), JSON-LD, sitemap, and robots — update values here only.
+export const siteInfo = {
+  name: { bn: 'মাল্টি কমিউনিটি হল', en: 'Multi Community Hall' },
+  tagline: {
+    bn: 'আপনার যেকোনো অনুষ্ঠানের জন্য আদর্শ স্থান',
+    en: 'The ideal venue for all your events',
+  },
+  description:
+    'A welcoming venue for events, celebrations, training, and community programs.',
+  // TODO: replace with the real production domain before launch
+  url: 'https://multicommunityhall.com',
+  // TODO: replace placeholder phone/WhatsApp numbers with real ones
+  phone: '+880 1XXX-XXXXXX',
+  whatsappUrl: 'https://wa.me/8801XXXXXXXXX',
+  email: 'info@multicommunityhall.com',
+  // TODO: replace placeholder address with the real one
+  address: {
+    bn: '১২৩, প্রধান সড়ক, উপজেলা সদর, জেলা শহর, বাংলাদেশ',
+    en: '123, Main Road, Upazila Sadar, District Town, Bangladesh',
+  },
+  // TODO: point these at the real social profiles
+  social: {
+    facebook: 'https://facebook.com',
+    youtube: 'https://youtube.com',
+    instagram: 'https://instagram.com',
+  },
+  // TODO: replace with the real Google Maps embed URL for the hall
+  mapEmbedUrl:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902756509!2d90.39945!3d23.7508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ1JzAzLjAiTiA5MMKwMjMnNTguMCJF!5e0!3m2!1sen!2sbd!4v1234567890',
+  // TODO: replace with a real "how to find us" video
+  directionsVideoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+};
+
 export interface CategoryData {
   id: string;
   route: string;

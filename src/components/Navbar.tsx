@@ -25,12 +25,28 @@ function DesktopDropdown({
   translate: (bn: string, en: string) => string;
 }) {
   return (
-    <div className="relative group" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <button type="button" aria-expanded={open} className="flex items-center gap-1 px-3 py-2 text-foreground hover:text-primary transition-colors font-medium">
-        {label} <ChevronDown className="w-4 h-4" />
+    <div
+      className="relative group"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onKeyDown={(e) => {
+        if (e.key === 'Escape') setOpen(false);
+      }}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpen(false);
+      }}
+    >
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-1 px-3 py-2 text-foreground hover:text-primary transition-colors font-medium"
+      >
+        {label} <ChevronDown className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
       {open && (
-        <div className="absolute top-full left-0 bg-background border border-border rounded-md shadow-lg min-w-[220px] py-1 z-50">
+        <div className="absolute top-full left-0 bg-background border border-border rounded-md shadow-lg min-w-55 py-1 z-50">
           {items.map((item) => (
             <Link key={item.to} href={item.to} className="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">
               {translate(item.bn, item.en)}
@@ -56,6 +72,14 @@ const Navbar = () => {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  // Close every open menu after navigating to another page
+  useEffect(() => {
+    setMobileOpen(false);
+    setEventOpen(false);
+    setServiceOpen(false);
+    setDrawerOpen(false);
+  }, [pathname]);
 
   const eventItems = [
     { to: '/wedding', bn: 'বিয়ের অনুষ্ঠান', en: 'Wedding' },
@@ -116,7 +140,12 @@ const Navbar = () => {
           >
             {language === 'bn' ? 'EN' : 'বাং'}
           </button>
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="text-foreground">
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-expanded={mobileOpen}
+            aria-label={t('মেনু', 'Menu')}
+            className="text-foreground"
+          >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
