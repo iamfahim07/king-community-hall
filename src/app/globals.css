@@ -43,6 +43,9 @@
   --color-overlay-foreground: var(--overlay-foreground);
   --color-footer: var(--footer);
   --color-footer-foreground: var(--footer-foreground);
+  --color-aurora-1: var(--aurora-1);
+  --color-aurora-2: var(--aurora-2);
+  --color-aurora-3: var(--aurora-3);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -61,6 +64,17 @@
   --overlay-foreground: oklch(1 0 0);
   --footer: oklch(0.145 0 0);
   --footer-foreground: oklch(1 0 0);
+  /* Accent gradient (headings, CTAs) — brand green flowing into teal and violet */
+  --accent-grad-1: hsl(145 63% 30%);
+  --accent-grad-2: oklch(0.52 0.13 230);
+  --accent-grad-3: oklch(0.5 0.17 290);
+  --accent-gradient: linear-gradient(100deg, var(--accent-grad-1), var(--accent-grad-2) 55%, var(--accent-grad-3));
+  /* Tinted scrim over hero photos — indigo → deep blue → deep green, same in both themes */
+  --hero-scrim: linear-gradient(160deg, oklch(0.22 0.06 285 / 70%), oklch(0.13 0.04 230 / 64%) 55%, oklch(0.16 0.06 155 / 64%));
+  /* Aurora blob colors (decorative, rendered blurred at low opacity) */
+  --aurora-1: oklch(0.8 0.09 250);
+  --aurora-2: oklch(0.8 0.1 305);
+  --aurora-3: oklch(0.84 0.09 165);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -101,6 +115,12 @@
   --page-gradient-to: oklch(0.15 0.028 300);
   --footer: oklch(0.13 0.015 270);
   --footer-foreground: oklch(0.96 0.005 270);
+  --accent-grad-1: hsl(145 55% 64%);
+  --accent-grad-2: oklch(0.78 0.11 220);
+  --accent-grad-3: oklch(0.76 0.13 295);
+  --aurora-1: oklch(0.45 0.11 260);
+  --aurora-2: oklch(0.42 0.13 300);
+  --aurora-3: oklch(0.45 0.1 165);
   --background: oklch(0.17 0.015 265);
   --foreground: oklch(0.96 0.005 270);
   --card: oklch(0.21 0.018 268);
@@ -154,5 +174,17 @@
 @layer utilities {
   .text-shadow-hero {
     text-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+  }
+  .bg-gradient-accent {
+    background-image: var(--accent-gradient);
+  }
+  .text-gradient-accent {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-hero-scrim {
+    background-image: var(--hero-scrim);
   }
 }

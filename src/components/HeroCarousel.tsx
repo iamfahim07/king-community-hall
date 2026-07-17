@@ -61,7 +61,7 @@ const HeroCarousel = () => {
           className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? 'opacity-100' : 'opacity-0'}`}
         >
           <Image src={cat.heroImage} alt={cat.en.name} fill sizes="100vw" className="object-cover" priority={i === 0} />
-          <div className="absolute inset-0 bg-overlay/60" />
+          <div className="absolute inset-0 bg-hero-scrim" />
         </div>
       ))}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
@@ -73,7 +73,7 @@ const HeroCarousel = () => {
         </p>
         <button
           onClick={handleCTA}
-          className="px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors text-lg"
+          className="px-8 py-3 bg-gradient-accent text-primary-foreground font-semibold rounded-lg transition hover:brightness-110 text-lg"
         >
           {t('ইভেন্ট বুক করুন', 'Book an Event')}
         </button>

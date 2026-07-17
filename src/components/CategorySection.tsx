@@ -5,7 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { CategoryData } from '@/data/siteData';
+import AuroraBackground from './AuroraBackground';
 import Lightbox from './Lightbox';
+import SectionHeading from './SectionHeading';
 
 interface Props {
   category: CategoryData;
@@ -21,7 +23,8 @@ const CategorySection = ({ category, index }: Props) => {
   return (
     <>
       <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
-      <section className="py-16">
+      <section className="relative isolate py-16">
+        <AuroraBackground />
         <div className="container mx-auto px-4">
           <div className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-10 items-center`}>
             {/* Images */}
@@ -39,15 +42,15 @@ const CategorySection = ({ category, index }: Props) => {
             </div>
             {/* Text */}
             <div className="w-full lg:w-1/2">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 border-l-4 border-primary pl-4">
+              <SectionHeading className="mb-4">
                 {t(category.bn.name, category.en.name)}
-              </h2>
+              </SectionHeading>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 {t(category.bn.description, category.en.description)}
               </p>
               <Link
                 href={category.route}
-                className="inline-block px-6 py-2.5 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+                className="inline-block px-6 py-2.5 bg-gradient-accent text-primary-foreground font-semibold rounded-lg transition hover:brightness-110"
               >
                 {t('বিস্তারিত দেখুন', 'View Details')}
               </Link>

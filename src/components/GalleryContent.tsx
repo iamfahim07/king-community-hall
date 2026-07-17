@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Lightbox from '@/components/Lightbox';
+import SectionHeading from '@/components/SectionHeading';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { categories } from '@/data/siteData';
 
@@ -22,7 +23,7 @@ export default function GalleryContent() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-overlay/60" />
+        <div className="absolute inset-0 bg-hero-scrim" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 pt-16 text-center">
           <h1 className="mb-3 text-3xl font-bold text-overlay-foreground text-shadow-hero md:text-5xl">
             {t('গ্যালারি', 'Gallery')}
@@ -53,9 +54,9 @@ export default function GalleryContent() {
           <div className="min-w-0 flex-1">
             {categories.map((category) => (
               <section key={category.id} id={`gallery-${category.id}`} className="mb-14 scroll-mt-24">
-                <h2 className="mb-6 border-l-4 border-primary pl-4 text-2xl font-bold text-foreground">
+                <SectionHeading className="mb-6">
                   {t(category.bn.name, category.en.name)}
-                </h2>
+                </SectionHeading>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {category.images.map((image, index) => (
                     <button

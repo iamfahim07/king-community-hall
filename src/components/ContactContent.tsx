@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import AuroraBackground from '@/components/AuroraBackground';
+import SectionHeading from '@/components/SectionHeading';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { siteInfo } from '@/data/siteData';
 
@@ -19,20 +21,21 @@ export default function ContactContent() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-overlay/60" />
+        <div className="absolute inset-0 bg-hero-scrim" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 pt-16 text-center">
           <h1 className="mb-3 text-3xl font-bold text-overlay-foreground text-shadow-hero md:text-5xl">{t('যোগাযোগ', 'Contact')}</h1>
           <p className="max-w-xl text-lg text-overlay-foreground/90 text-shadow-hero">{t('আমাদের সাথে যোগাযোগ করুন', 'Get in touch with us')}</p>
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="relative isolate py-16">
+        <AuroraBackground />
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-16 grid max-w-5xl grid-cols-1 gap-12 md:grid-cols-2">
             <div className="space-y-6">
-              <h2 className="mb-6 border-l-4 border-primary pl-4 text-2xl font-bold text-foreground md:text-3xl">
+              <SectionHeading className="mb-6">
                 {t('যোগাযোগের তথ্য', 'Contact Information')}
-              </h2>
+              </SectionHeading>
               <ContactItem icon={<Phone className="size-6" />} title={t('ফোন', 'Phone')}>{siteInfo.phone}</ContactItem>
               <ContactItem icon={<Mail className="size-6" />} title={t('ইমেইল', 'Email')}>{siteInfo.email}</ContactItem>
               <ContactItem icon={<MapPin className="size-6" />} title={t('ঠিকানা', 'Address')}>
@@ -90,7 +93,7 @@ function ContactItem({ icon, title, children }: { icon: React.ReactNode; title: 
 function EmbedSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mx-auto mb-12 max-w-4xl last:mb-0">
-      <h2 className="mb-4 border-l-4 border-primary pl-4 text-2xl font-bold text-foreground">{title}</h2>
+      <SectionHeading className="mb-4">{title}</SectionHeading>
       <div className="aspect-video overflow-hidden rounded-lg border border-border">{children}</div>
     </section>
   );

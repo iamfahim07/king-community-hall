@@ -1,5 +1,6 @@
 'use client';
 
+import AuroraBackground from '@/components/AuroraBackground';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { siteInfo } from '@/data/siteData';
 import { Facebook01Icon, InstagramIcon, YoutubeIcon } from '@hugeicons/core-free-icons';
@@ -9,7 +10,8 @@ const SocialLinks = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-12 bg-secondary">
+    <section className="relative isolate py-12 bg-secondary">
+      <AuroraBackground />
       <div className="container mx-auto px-4 text-center">
         <h3 className="text-xl font-semibold text-foreground mb-6">
           {t('আমাদের সাথে সংযুক্ত থাকুন', 'Stay Connected With Us')}
