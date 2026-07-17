@@ -2,15 +2,46 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Check } from 'lucide-react';
+import {
+  Award,
+  BookOpen,
+  CalendarCheck,
+  Car,
+  Check,
+  Clock,
+  Landmark,
+  Mic,
+  Monitor,
+  Ruler,
+  Users,
+  Utensils,
+  Zap,
+  type LucideIcon,
+} from 'lucide-react';
 import Lightbox from '@/components/Lightbox';
 import SectionHeading from '@/components/SectionHeading';
 import { useLanguage } from '@/contexts/LanguageContext';
-import type { CategoryData } from '@/data/siteData';
+import type { CategoryData, FactId } from '@/data/siteData';
+
+const FACT_ICONS: Record<FactId, LucideIcon> = {
+  capacity: Users,
+  size: Ruler,
+  parking: Car,
+  stage: Mic,
+  catering: Utensils,
+  power: Zap,
+  prayer: Landmark,
+  booking: CalendarCheck,
+  schedule: Clock,
+  materials: BookOpen,
+  lab: Monitor,
+  certificate: Award,
+};
 
 export default function CategoryDetails({ category }: { category: CategoryData }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const localized = language === 'bn' ? category.bn : category.en;
 
   return (
     <>
@@ -27,7 +58,31 @@ export default function CategoryDetails({ category }: { category: CategoryData }
       <section className="py-16">
         <div className="container mx-auto px-4">
           <SectionHeading className="mb-4">{t(category.bn.name, category.en.name)}</SectionHeading>
-          <p className="mb-10 max-w-3xl leading-relaxed text-muted-foreground">{t(category.bn.description, category.en.description)}</p>
+          <div className="mb-12 max-w-3xl space-y-4">
+            {localized.details.map((paragraph) => (
+              <p key={paragraph} className="leading-relaxed text-muted-foreground">{paragraph}</p>
+            ))}
+          </div>
+
+          {category.facts?.length ? (
+            <>
+              <SectionHeading className="mb-6">{t('এক নজরে', 'At a Glance')}</SectionHeading>
+              <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {category.facts.map((fact) => {
+                  const Icon = FACT_ICONS[fact.id];
+                  const { label, value } = language === 'bn' ? fact.bn : fact.en;
+                  return (
+                    <div key={fact.id} className="rounded-lg border border-border bg-card p-4">
+                      <Icon className="mb-2 size-5 text-primary" />
+                      <p className="text-sm text-muted-foreground">{label}</p>
+                      <p className="font-semibold text-card-foreground">{value}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          ) : null}
+
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {category.images.map((image, index) => (
               <button type="button" key={image} onClick={() => setLightboxSrc(image)} className="relative h-56 overflow-hidden rounded-lg transition-opacity hover:opacity-90">
