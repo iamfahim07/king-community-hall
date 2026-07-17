@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X, ChevronDown, LayoutGrid } from 'lucide-react';
 import { categories, siteInfo } from '@/data/siteData';
+import ThemeToggle from '@/components/ThemeToggle';
 import logo from '@/assets/logo.png';
 
 type NavItem = { to: string; bn: string; en: string };
@@ -119,6 +120,7 @@ const Navbar = () => {
           >
             {language === 'bn' ? 'English' : 'বাংলা'}
           </button>
+          <ThemeToggle className="ml-2" />
         </div>
 
         {/* Mobile */}
@@ -140,6 +142,7 @@ const Navbar = () => {
           >
             {language === 'bn' ? 'EN' : 'বাং'}
           </button>
+          <ThemeToggle className="w-7.5 h-7.5" />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}

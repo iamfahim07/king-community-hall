@@ -11,18 +11,18 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-foreground text-background py-10">
+    <footer className="bg-footer text-footer-foreground py-10">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <Image src={logo} alt={siteInfo.name.en} className="h-24 w-auto mb-3" />
-            <p className="text-background/70 text-sm">
+            <p className="text-footer-foreground/70 text-sm">
               {t(siteInfo.tagline.bn, siteInfo.tagline.en)}
             </p>
           </div>
           <div>
             <h4 className="font-semibold mb-3">{t('দ্রুত লিংক', 'Quick Links')}</h4>
-            <div className="flex flex-col gap-2 text-sm text-background/70">
+            <div className="flex flex-col gap-2 text-sm text-footer-foreground/70">
               <Link href="/" className="hover:text-primary transition-colors">{t('হোম', 'Home')}</Link>
               <Link href="/gallery" className="hover:text-primary transition-colors">{t('গ্যালারি', 'Gallery')}</Link>
               <Link href="/contact" className="hover:text-primary transition-colors">{t('যোগাযোগ', 'Contact')}</Link>
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
           <div>
             <h4 className="font-semibold mb-3">{t('ইভেন্ট সমূহ', 'Events')}</h4>
-            <div className="flex flex-col gap-2 text-sm text-background/70">
+            <div className="flex flex-col gap-2 text-sm text-footer-foreground/70">
               <Link href="/wedding" className="hover:text-primary transition-colors">{t('বিয়ের অনুষ্ঠান', 'Wedding')}</Link>
               <Link href="/birthday" className="hover:text-primary transition-colors">{t('জন্মদিন', 'Birthday')}</Link>
               <Link href="/workshop" className="hover:text-primary transition-colors">{t('ওয়ার্কশপ', 'Workshop')}</Link>
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
           <div>
             <h4 className="font-semibold mb-3">{t('যোগাযোগ', 'Contact')}</h4>
-            <div className="flex flex-col gap-3 text-sm text-background/70">
+            <div className="flex flex-col gap-3 text-sm text-footer-foreground/70">
               <div className="flex items-start gap-2">
                 <Phone className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <span>{siteInfo.phone}</span>
@@ -55,7 +55,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-background/20 mt-8 pt-6 text-center text-sm text-background/50">
+        <div className="border-t border-footer-foreground/20 mt-8 pt-6 text-center text-sm text-footer-foreground/50">
           © {new Date().getFullYear()} {t(siteInfo.name.bn, siteInfo.name.en)}. {t('সর্বস্বত্ব সংরক্ষিত।', 'All rights reserved.')}
         </div>
       </div>

@@ -16,10 +16,10 @@ export default function CategoryDetails({ category }: { category: CategoryData }
       <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
       <section className="relative h-[50vh] min-h-[350px] pt-16">
         <Image src={category.heroImage} alt={category.en.name} fill sizes="100vw" className="object-cover" priority />
-        <div className="absolute inset-0 bg-foreground/60" />
+        <div className="absolute inset-0 bg-overlay/60" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 pt-16 text-center">
-          <h1 className="mb-3 text-3xl font-bold text-background text-shadow-hero md:text-5xl">{t(category.bn.name, category.en.name)}</h1>
-          <p className="max-w-xl text-lg text-background/90 text-shadow-hero">{t(category.bn.subtitle, category.en.subtitle)}</p>
+          <h1 className="mb-3 text-3xl font-bold text-overlay-foreground text-shadow-hero md:text-5xl">{t(category.bn.name, category.en.name)}</h1>
+          <p className="max-w-xl text-lg text-overlay-foreground/90 text-shadow-hero">{t(category.bn.subtitle, category.en.subtitle)}</p>
         </div>
       </section>
 

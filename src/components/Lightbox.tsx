@@ -28,8 +28,8 @@ const Lightbox = ({ src, onClose }: LightboxProps) => {
   if (!src) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] bg-foreground/90 flex items-center justify-center p-4" onClick={onClose}>
-      <button onClick={onClose} className="absolute top-4 right-4 text-background hover:text-primary transition-colors z-[101]">
+    <div className="fixed inset-0 z-[100] bg-overlay/90 flex items-center justify-center p-4" onClick={onClose}>
+      <button onClick={onClose} className="absolute top-4 right-4 text-overlay-foreground hover:text-primary transition-colors z-[101]">
         <X className="w-8 h-8" />
       </button>
       <div

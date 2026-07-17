@@ -22,12 +22,12 @@ export default function GalleryContent() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-foreground/60" />
+        <div className="absolute inset-0 bg-overlay/60" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 pt-16 text-center">
-          <h1 className="mb-3 text-3xl font-bold text-background text-shadow-hero md:text-5xl">
+          <h1 className="mb-3 text-3xl font-bold text-overlay-foreground text-shadow-hero md:text-5xl">
             {t('গ্যালারি', 'Gallery')}
           </h1>
-          <p className="max-w-xl text-lg text-background/90 text-shadow-hero">
+          <p className="max-w-xl text-lg text-overlay-foreground/90 text-shadow-hero">
             {t('আমাদের সকল অনুষ্ঠানের ছবি দেখুন', 'Browse photos from all our events')}
           </p>
         </div>
