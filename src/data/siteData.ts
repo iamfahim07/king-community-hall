@@ -12,8 +12,8 @@ export const siteInfo = {
   // TODO: replace with the real production domain before launch
   url: "https://kingcommunityhall.com",
   // TODO: replace placeholder phone/WhatsApp numbers with real ones
-  phone: "+880 1XXX-XXXXXX",
-  whatsappUrl: "https://wa.me/8801XXXXXXXXX",
+  phone: "+880 1711-742861",
+  whatsappUrl: "https://wa.me/8801711-742861",
   email: "kingcommunityhall@gmail.com",
   // TODO: replace placeholder address with the real one
   address: {
@@ -59,8 +59,20 @@ export interface CategoryData {
   route: string;
   // `description` is the short teaser shown on the home page;
   // `details` is the longer copy shown only on the category page.
-  bn: { name: string; headline: string; subtitle: string; description: string; details: string[] };
-  en: { name: string; headline: string; subtitle: string; description: string; details: string[] };
+  bn: {
+    name: string;
+    headline: string;
+    subtitle: string;
+    description: string;
+    details: string[];
+  };
+  en: {
+    name: string;
+    headline: string;
+    subtitle: string;
+    description: string;
+    details: string[];
+  };
   heroImage: string;
   images: string[];
   amenities?: { bn: string; en: string }[];
@@ -118,14 +130,46 @@ export const categories: CategoryData[] = [
       { bn: "২৪ ঘন্টা পানি ও বিদ্যুৎ সুবিধা", en: "24/7 Water & Electricity" },
     ],
     facts: [
-      { id: "capacity", bn: { label: "ধারণক্ষমতা", value: "৪০০ অতিথি (ব্যাংকুয়েট)" }, en: { label: "Capacity", value: "400 guests (banquet)" } },
-      { id: "size", bn: { label: "হলের আয়তন", value: "৬,৫০০ বর্গফুট" }, en: { label: "Hall Size", value: "6,500 sq ft" } },
-      { id: "parking", bn: { label: "পার্কিং", value: "প্রায় ৬০টি গাড়ি" }, en: { label: "Parking", value: "~60 cars" } },
-      { id: "stage", bn: { label: "স্টেজ ও সাজসজ্জা", value: "সুসজ্জিত স্টেজ ও কনের রুম" }, en: { label: "Stage & Décor", value: "Decorated stage + bridal room" } },
-      { id: "catering", bn: { label: "ক্যাটারিং", value: "নিজস্ব, পছন্দমতো মেনু" }, en: { label: "Catering", value: "In-house, customizable menu" } },
-      { id: "prayer", bn: { label: "নামাজের ব্যবস্থা", value: "আলাদা নামাজের কক্ষ" }, en: { label: "Prayer Space", value: "Separate prayer room" } },
-      { id: "power", bn: { label: "বিদ্যুৎ ব্যবস্থা", value: "পূর্ণ জেনারেটর ব্যাকআপ" }, en: { label: "Power Backup", value: "Full generator backup" } },
-      { id: "booking", bn: { label: "বুকিং", value: "৫০% অগ্রিমে নিশ্চিত" }, en: { label: "Booking", value: "50% advance to confirm" } },
+      {
+        id: "capacity",
+        bn: { label: "ধারণক্ষমতা", value: "৪০০ অতিথি (ব্যাংকুয়েট)" },
+        en: { label: "Capacity", value: "400 guests (banquet)" },
+      },
+      {
+        id: "size",
+        bn: { label: "হলের আয়তন", value: "৬,৫০০ বর্গফুট" },
+        en: { label: "Hall Size", value: "6,500 sq ft" },
+      },
+      {
+        id: "parking",
+        bn: { label: "পার্কিং", value: "প্রায় ৬০টি গাড়ি" },
+        en: { label: "Parking", value: "~60 cars" },
+      },
+      {
+        id: "stage",
+        bn: { label: "স্টেজ ও সাজসজ্জা", value: "সুসজ্জিত স্টেজ ও কনের রুম" },
+        en: { label: "Stage & Décor", value: "Decorated stage + bridal room" },
+      },
+      {
+        id: "catering",
+        bn: { label: "ক্যাটারিং", value: "নিজস্ব, পছন্দমতো মেনু" },
+        en: { label: "Catering", value: "In-house, customizable menu" },
+      },
+      {
+        id: "prayer",
+        bn: { label: "নামাজের ব্যবস্থা", value: "আলাদা নামাজের কক্ষ" },
+        en: { label: "Prayer Space", value: "Separate prayer room" },
+      },
+      {
+        id: "power",
+        bn: { label: "বিদ্যুৎ ব্যবস্থা", value: "পূর্ণ জেনারেটর ব্যাকআপ" },
+        en: { label: "Power Backup", value: "Full generator backup" },
+      },
+      {
+        id: "booking",
+        bn: { label: "বুকিং", value: "৫০% অগ্রিমে নিশ্চিত" },
+        en: { label: "Booking", value: "50% advance to confirm" },
+      },
     ],
   },
   {
@@ -175,12 +219,36 @@ export const categories: CategoryData[] = [
       { bn: "২৪ ঘন্টা পানি ও বিদ্যুৎ সুবিধা", en: "24/7 Water & Electricity" },
     ],
     facts: [
-      { id: "capacity", bn: { label: "ধারণক্ষমতা", value: "১৫০ অতিথি" }, en: { label: "Capacity", value: "150 guests" } },
-      { id: "stage", bn: { label: "স্টেজ", value: "কেক কাটার স্টেজ ও সাউন্ড সিস্টেম" }, en: { label: "Stage", value: "Cake stage + sound system" } },
-      { id: "catering", bn: { label: "ক্যাটারিং", value: "স্ন্যাক্স থেকে ফুল ডিনার" }, en: { label: "Catering", value: "Snacks to full dinners" } },
-      { id: "schedule", bn: { label: "সময়সূচি", value: "সকাল বা সন্ধ্যার অর্ধদিবস স্লট" }, en: { label: "Schedule", value: "Morning or evening half-day slots" } },
-      { id: "parking", bn: { label: "পার্কিং", value: "গাড়ি ও বাইকের পর্যাপ্ত জায়গা" }, en: { label: "Parking", value: "Ample car & bike parking" } },
-      { id: "booking", bn: { label: "বুকিং", value: "১ সপ্তাহ আগে বুকিংয়ের পরামর্শ" }, en: { label: "Booking", value: "Book at least 1 week ahead" } },
+      {
+        id: "capacity",
+        bn: { label: "ধারণক্ষমতা", value: "১৫০ অতিথি" },
+        en: { label: "Capacity", value: "150 guests" },
+      },
+      {
+        id: "stage",
+        bn: { label: "স্টেজ", value: "কেক কাটার স্টেজ ও সাউন্ড সিস্টেম" },
+        en: { label: "Stage", value: "Cake stage + sound system" },
+      },
+      {
+        id: "catering",
+        bn: { label: "ক্যাটারিং", value: "স্ন্যাক্স থেকে ফুল ডিনার" },
+        en: { label: "Catering", value: "Snacks to full dinners" },
+      },
+      {
+        id: "schedule",
+        bn: { label: "সময়সূচি", value: "সকাল বা সন্ধ্যার অর্ধদিবস স্লট" },
+        en: { label: "Schedule", value: "Morning or evening half-day slots" },
+      },
+      {
+        id: "parking",
+        bn: { label: "পার্কিং", value: "গাড়ি ও বাইকের পর্যাপ্ত জায়গা" },
+        en: { label: "Parking", value: "Ample car & bike parking" },
+      },
+      {
+        id: "booking",
+        bn: { label: "বুকিং", value: "১ সপ্তাহ আগে বুকিংয়ের পরামর্শ" },
+        en: { label: "Booking", value: "Book at least 1 week ahead" },
+      },
     ],
   },
   {
@@ -231,12 +299,48 @@ export const categories: CategoryData[] = [
       { bn: "২৪ ঘন্টা পানি ও বিদ্যুৎ সুবিধা", en: "24/7 Water & Electricity" },
     ],
     facts: [
-      { id: "capacity", bn: { label: "ধারণক্ষমতা", value: "থিয়েটারে ২০০ / ক্লাসরুমে ৮০" }, en: { label: "Capacity", value: "200 theater / 80 classroom" } },
-      { id: "stage", bn: { label: "প্রেজেন্টেশন সরঞ্জাম", value: "প্রজেক্টর, সাউন্ড ও ওয়্যারলেস মাইক" }, en: { label: "Presentation Gear", value: "Projector, PA & wireless mics" } },
-      { id: "schedule", bn: { label: "ভাড়ার ধরন", value: "ঘণ্টা, অর্ধদিবস বা পূর্ণদিবস" }, en: { label: "Rental", value: "Hourly, half-day or full-day" } },
-      { id: "catering", bn: { label: "ক্যাটারিং", value: "চা-বিরতি ও লাঞ্চ প্যাকেজ" }, en: { label: "Catering", value: "Tea-break & lunch packages" } },
-      { id: "power", bn: { label: "বিদ্যুৎ ব্যবস্থা", value: "জেনারেটর ব্যাকআপ" }, en: { label: "Power Backup", value: "Generator backup" } },
-      { id: "booking", bn: { label: "প্রাতিষ্ঠানিক বুকিং", value: "ইনভয়েস ও ডকুমেন্ট সুবিধা" }, en: { label: "Institutional Booking", value: "Invoice & documentation support" } },
+      {
+        id: "capacity",
+        bn: { label: "ধারণক্ষমতা", value: "থিয়েটারে ২০০ / ক্লাসরুমে ৮০" },
+        en: { label: "Capacity", value: "200 theater / 80 classroom" },
+      },
+      {
+        id: "stage",
+        bn: {
+          label: "প্রেজেন্টেশন সরঞ্জাম",
+          value: "প্রজেক্টর, সাউন্ড ও ওয়্যারলেস মাইক",
+        },
+        en: {
+          label: "Presentation Gear",
+          value: "Projector, PA & wireless mics",
+        },
+      },
+      {
+        id: "schedule",
+        bn: { label: "ভাড়ার ধরন", value: "ঘণ্টা, অর্ধদিবস বা পূর্ণদিবস" },
+        en: { label: "Rental", value: "Hourly, half-day or full-day" },
+      },
+      {
+        id: "catering",
+        bn: { label: "ক্যাটারিং", value: "চা-বিরতি ও লাঞ্চ প্যাকেজ" },
+        en: { label: "Catering", value: "Tea-break & lunch packages" },
+      },
+      {
+        id: "power",
+        bn: { label: "বিদ্যুৎ ব্যবস্থা", value: "জেনারেটর ব্যাকআপ" },
+        en: { label: "Power Backup", value: "Generator backup" },
+      },
+      {
+        id: "booking",
+        bn: {
+          label: "প্রাতিষ্ঠানিক বুকিং",
+          value: "ইনভয়েস ও ডকুমেন্ট সুবিধা",
+        },
+        en: {
+          label: "Institutional Booking",
+          value: "Invoice & documentation support",
+        },
+      },
     ],
   },
   {
@@ -287,12 +391,39 @@ export const categories: CategoryData[] = [
       { bn: "২৪ ঘন্টা পানি ও বিদ্যুৎ সুবিধা", en: "24/7 Water & Electricity" },
     ],
     facts: [
-      { id: "capacity", bn: { label: "ধারণক্ষমতা", value: "থিয়েটারে ২৫০ / ব্যাংকুয়েটে ১২০" }, en: { label: "Capacity", value: "250 theater / 120 banquet" } },
-      { id: "stage", bn: { label: "স্টেজ ও ব্র্যান্ডিং", value: "LED ব্যাকড্রপ ও ব্যানার স্পেস" }, en: { label: "Stage & Branding", value: "LED backdrop & banner space" } },
-      { id: "catering", bn: { label: "ক্যাটারিং", value: "বুফে, বক্সড বা ফরমাল ডিনার" }, en: { label: "Catering", value: "Buffet, boxed or plated" } },
-      { id: "parking", bn: { label: "পার্কিং", value: "প্রায় ৬০টি গাড়ি" }, en: { label: "Parking", value: "~60 cars" } },
-      { id: "power", bn: { label: "বিদ্যুৎ ব্যবস্থা", value: "পূর্ণ জেনারেটর ব্যাকআপ" }, en: { label: "Power Backup", value: "Full generator backup" } },
-      { id: "booking", bn: { label: "বুকিং", value: "ওয়ার্ক অর্ডার ও ইনভয়েস সুবিধা" }, en: { label: "Booking", value: "Work-order & invoice support" } },
+      {
+        id: "capacity",
+        bn: { label: "ধারণক্ষমতা", value: "থিয়েটারে ২৫০ / ব্যাংকুয়েটে ১২০" },
+        en: { label: "Capacity", value: "250 theater / 120 banquet" },
+      },
+      {
+        id: "stage",
+        bn: {
+          label: "স্টেজ ও ব্র্যান্ডিং",
+          value: "LED ব্যাকড্রপ ও ব্যানার স্পেস",
+        },
+        en: { label: "Stage & Branding", value: "LED backdrop & banner space" },
+      },
+      {
+        id: "catering",
+        bn: { label: "ক্যাটারিং", value: "বুফে, বক্সড বা ফরমাল ডিনার" },
+        en: { label: "Catering", value: "Buffet, boxed or plated" },
+      },
+      {
+        id: "parking",
+        bn: { label: "পার্কিং", value: "প্রায় ৬০টি গাড়ি" },
+        en: { label: "Parking", value: "~60 cars" },
+      },
+      {
+        id: "power",
+        bn: { label: "বিদ্যুৎ ব্যবস্থা", value: "পূর্ণ জেনারেটর ব্যাকআপ" },
+        en: { label: "Power Backup", value: "Full generator backup" },
+      },
+      {
+        id: "booking",
+        bn: { label: "বুকিং", value: "ওয়ার্ক অর্ডার ও ইনভয়েস সুবিধা" },
+        en: { label: "Booking", value: "Work-order & invoice support" },
+      },
     ],
   },
   {
@@ -332,10 +463,29 @@ export const categories: CategoryData[] = [
       "https://images.unsplash.com/photo-1546410531-bb4caa6b3241?w=600&q=80",
     ],
     facts: [
-      { id: "capacity", bn: { label: "ব্যাচ সাইজ", value: "সর্বোচ্চ ১৫ জন" }, en: { label: "Batch Size", value: "Max 15 students" } },
-      { id: "schedule", bn: { label: "কোর্সের মেয়াদ", value: "IELTS ১০-১২ সপ্তাহ / স্পোকেন ২ মাস" }, en: { label: "Duration", value: "IELTS 10–12 wks / Spoken 2 mo" } },
-      { id: "materials", bn: { label: "ম্যাটেরিয়াল", value: "বই ও মক টেস্ট ফি-র অন্তর্ভুক্ত" }, en: { label: "Materials", value: "Books & mock tests included" } },
-      { id: "booking", bn: { label: "ভর্তি", value: "প্রতি মাসের শুরুতে নতুন ব্যাচ" }, en: { label: "Admission", value: "New batches every month" } },
+      {
+        id: "capacity",
+        bn: { label: "ব্যাচ সাইজ", value: "সর্বোচ্চ ১৫ জন" },
+        en: { label: "Batch Size", value: "Max 15 students" },
+      },
+      {
+        id: "schedule",
+        bn: {
+          label: "কোর্সের মেয়াদ",
+          value: "IELTS ১০-১২ সপ্তাহ / স্পোকেন ২ মাস",
+        },
+        en: { label: "Duration", value: "IELTS 10–12 wks / Spoken 2 mo" },
+      },
+      {
+        id: "materials",
+        bn: { label: "ম্যাটেরিয়াল", value: "বই ও মক টেস্ট ফি-র অন্তর্ভুক্ত" },
+        en: { label: "Materials", value: "Books & mock tests included" },
+      },
+      {
+        id: "booking",
+        bn: { label: "ভর্তি", value: "প্রতি মাসের শুরুতে নতুন ব্যাচ" },
+        en: { label: "Admission", value: "New batches every month" },
+      },
     ],
   },
   {
@@ -375,10 +525,26 @@ export const categories: CategoryData[] = [
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80",
     ],
     facts: [
-      { id: "lab", bn: { label: "কম্পিউটার ল্যাব", value: "২৫টি নিজস্ব ওয়ার্কস্টেশন" }, en: { label: "Computer Lab", value: "25 personal workstations" } },
-      { id: "schedule", bn: { label: "সময়সূচি", value: "সন্ধ্যা ও ছুটির দিনের ব্যাচ" }, en: { label: "Schedule", value: "Evening & weekend batches" } },
-      { id: "certificate", bn: { label: "সার্টিফিকেট", value: "কোর্স শেষে প্রদান করা হয়" }, en: { label: "Certificate", value: "Awarded on completion" } },
-      { id: "booking", bn: { label: "ভর্তি", value: "মাসিক সাইকেলে, আসন সীমিত" }, en: { label: "Admission", value: "Monthly cycles, limited seats" } },
+      {
+        id: "lab",
+        bn: { label: "কম্পিউটার ল্যাব", value: "২৫টি নিজস্ব ওয়ার্কস্টেশন" },
+        en: { label: "Computer Lab", value: "25 personal workstations" },
+      },
+      {
+        id: "schedule",
+        bn: { label: "সময়সূচি", value: "সন্ধ্যা ও ছুটির দিনের ব্যাচ" },
+        en: { label: "Schedule", value: "Evening & weekend batches" },
+      },
+      {
+        id: "certificate",
+        bn: { label: "সার্টিফিকেট", value: "কোর্স শেষে প্রদান করা হয়" },
+        en: { label: "Certificate", value: "Awarded on completion" },
+      },
+      {
+        id: "booking",
+        bn: { label: "ভর্তি", value: "মাসিক সাইকেলে, আসন সীমিত" },
+        en: { label: "Admission", value: "Monthly cycles, limited seats" },
+      },
     ],
   },
 ];
